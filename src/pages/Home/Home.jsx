@@ -46,8 +46,8 @@ export const Home = () => {
                             //Ahora que resultado ya ha venido con las series, 
                             //guardo en el hook tan sólo las series, sin la info 
                             //de la conexión etc.... sólo las series
-
-                            setSeries(resultado.data.results);
+                            console.log(resultado);
+                            setSeries(resultado.data);
                         }
                     )
                     .catch(error => console.log(error));
@@ -57,10 +57,6 @@ export const Home = () => {
         };
 
     }, [series]);
-
-    useEffect(() => {
-        console.log("eeeeooooooooo", datosReduxSeries);
-    })
 
     const Choosen = (serie) => {
 
@@ -78,12 +74,12 @@ export const Home = () => {
     return (
         <div className='homeDesign'>
 
-            {datosReduxSeries.series.length > 0 ? (
+            {series.length > 0 ? (
 
                 //Si entramos aqui es porque tenemos series de Redux....
 
                 <div className='rosterDesign'>
-                    {datosReduxSeries.series.map(
+                    {series.map(
                         serie => {
                             return (
                                 <div onClick={() => Choosen(serie)} key={serie.id}>
@@ -95,35 +91,11 @@ export const Home = () => {
                 </div>
 
 
-            ) :
+            ) : (
 
-                (
+                <div><img className="loadingGif" src={Loading} alt="Cargando" /></div>
 
-
-                    series.length > 0 ? (
-
-                        // Ya que el hook si contiene las series, es momento de mapearlas
-                        // y poder mostrarlas en pantalla
-
-                        <div className='rosterDesign'>
-                            {series.map(
-                                serie => {
-                                    return (
-                                        <div onClick={() => Choosen(serie)} key={serie.id}>
-                                            <CardSerie serie={serie} />
-                                        </div>
-                                    )
-                                }
-                            )}
-                        </div>
-
-                    ) : (
-
-                        <div><img className="loadingGif" src={Loading} alt="Cargando" /></div>
-
-                    )
-
-                )
+            )
 
             }
 

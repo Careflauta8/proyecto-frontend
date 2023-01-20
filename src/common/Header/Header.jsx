@@ -40,7 +40,7 @@ export const Header = () => {
 
     useEffect(()=>{
 
-        if(search !== ""){
+        if(search !== ''){
 
             //Procedemos a buscar...
 

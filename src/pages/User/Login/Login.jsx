@@ -40,11 +40,13 @@ export const Login = () => {
 
     //Funciones
     const Logeame = () => {
+       
 
         //Desde aqui llamamos al servicio....
-        postLogin(credenciales)
+        postLogin(credenciales) //se trae el token del back 
             .then(
                 resultado => {
+                    console.log(resultado, 'aaaaa');
 
                     //Ahora yo decodificaría el token... 
 
@@ -53,6 +55,7 @@ export const Login = () => {
 
                     let decodificado = Decoder(resultado.data.token);
                     console.log(resultado);
+
                     let userPass = {
                         token : resultado, // estos datos serian el payload //
                         user: decodificado.usuario[0]
@@ -90,7 +93,7 @@ export const Login = () => {
                 functionHandler={InputHandler}
             />
             <InputText 
-                type={"text"} 
+                type={"password"}  
                 name={"password"} 
                 placeholder={"Escribe tu contraseña"} 
                 functionHandler={InputHandler}
