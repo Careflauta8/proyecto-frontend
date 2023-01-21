@@ -11,6 +11,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { userData, login } from '../userSlice';
 
 import './Login.css';
+import '../../../common/InputText/InputText.css';
 
 export const Login = () => {
 
@@ -86,12 +87,14 @@ export const Login = () => {
     return (
         <div className='loginDesign'>
             {/* <pre>{JSON.stringify(credenciales, null, 2)}</pre> */}
+            Email
             <InputText 
                 type={"email"} 
                 name={"email"} 
                 placeholder={"Escribe tu email"} 
                 functionHandler={InputHandler}
             />
+            Password
             <InputText 
                 type={"password"}  
                 name={"password"} 

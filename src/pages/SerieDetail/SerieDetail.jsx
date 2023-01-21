@@ -46,7 +46,7 @@ export const SerieDetail = () => {
 
                     {detailUsr.userPass.token !== '' &&
                     
-                        <div onClick={()=>RentMe()} className='rentDesign'>ALQUILAME</div>
+                        <div onClick={()=>RentMe()} className='rentDesign'>ALQUILAR</div>
                     }
                 </div>
             
