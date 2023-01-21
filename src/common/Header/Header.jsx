@@ -85,7 +85,7 @@ export const Header = () => {
         <div className='headerDesign'>
             <div onClick={()=>navigate("/")} className='homeDesignHeader'><img className='homeAvatar' src={Logo} alt="Home"/></div>
             <div className='searchDesign'>
-
+                    Search <br/>
                 <InputText type={"text"} name={"search"} placeholder={"Busca aquí tu serie favorita"} functionHandler={handleSearch} />
             </div>
 
@@ -107,8 +107,8 @@ export const Header = () => {
                         //La primera vez que entramos en la aplicación, siempre entrará aquí por defecto
 
                         <>
-                            <div className='linkDesign' onClick={() => setTimeout(() => { navigate("/login") }, 200)}>login</div>
-                            <div className='linkDesign' onClick={() => setTimeout(() => { navigate("/register") }, 200)}>register</div>
+                            <div className='linkDesign' onClick={() => setTimeout(() => { navigate("/login") }, 200)}>Login</div>
+                            <div className='linkDesign' onClick={() => setTimeout(() => { navigate("/register") }, 200)}>Register</div>
                         </>
                     )
                 }

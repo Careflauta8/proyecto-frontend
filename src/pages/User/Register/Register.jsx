@@ -18,20 +18,51 @@ export const Register = () => {
 
         const datosReduxUsuario = useSelector(userData);
 
+    //creamos el hooks
     const [usuario, setUsuario] = useState({
         name: '',
         surname: '',
         email: '',
         password: '',
+        errors: [],
+        errMes: ''
     })
 
-        //Variables y constantes
-        const navigate = useNavigate();
+    //Variables y constantes a utilizar
+    const navigate = useNavigate();
 
     const registerInputHandler = (e) => {
 
         //Manejo la entrada de datos en los input y voy actualizando el hook usuario a medida
         //que los datos se van introduciendo
+        if(usuario.name.length !== 0) {
+            usuario.errors.push('name')
+            setUsuario({
+                ...usuario,
+                errMes: 'Debe rellenar el nombre'
+            })
+        }
+        if(usuario.surname.length !== 0) {
+            usuario.errors.push('surname')
+            setUsuario({
+                ...usuario,
+                errMes: 'Debe rellenar el apellido'
+            })
+        }
+        if(usuario.email.length !== 0) {
+            usuario.errors.push('email')
+            setUsuario({
+                ...usuario,
+                errMes: 'Debe rellenar el email'
+            })
+        }
+        if(usuario.password.length !== 0) {
+            usuario.errors.push('password')
+            setUsuario({
+                ...usuario,
+                errMes: 'Debe rellenar la contraseña'
+            })
+        }
 
         //Bindear (atar)
         setUsuario((prevState)=>({...prevState, 
@@ -41,7 +72,7 @@ export const Register = () => {
 
     }
 
-    const Registrame = () => {
+    const Registrarme = () => {
         //Desde aqui llamamos al servicio....
         postRegister(usuario)
             .then(
@@ -66,7 +97,7 @@ export const Register = () => {
     }
     useEffect(()=>{
         if(datosReduxUsuario.userPass !== ''){
-            navigate("/");
+            navigate("/register");
         }
     },[])
 
@@ -97,7 +128,7 @@ export const Register = () => {
             placeholder={'Crea una contraseña'}  
             functionHandler={registerInputHandler}
             />
-            <div className ='registerButtonDesign' onClick = {()=>Registrame()}>REGISTER</div>
+            <div className ='registerButtonDesign' onClick = {()=>Registrarme()}>REGISTER</div>
         </div>
     );
 };

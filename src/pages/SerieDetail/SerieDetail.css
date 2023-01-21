@@ -9,7 +9,9 @@
     height: 85vh;
     width: 100vw;
 
-    background-color: lightcyan;
+    background-color: #454545;
+
+    color: white;
 
     font-weight: bolder;
 }
@@ -29,6 +31,10 @@
 .detailPoster {
 
     height: 40vh;
+
+    
+    border: 0.3em solid orangered;
+    border-radius: 0.8em;
 }
 
 .rentDesign {
