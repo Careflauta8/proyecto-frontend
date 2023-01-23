@@ -99,7 +99,7 @@ export const Header = () => {
                         {/* Para hacer logout, emitimos la accion logout desde el dispatch, dando como valor
     a userPass del estado de Redux el contenido de initial, es decir...lo reiniciamos o vaciamos,
     al no tener token ni datos de usuario, dejaremos de estar logeados */}
-                        <div className='linkDesign' onClick={() => logOff()}>logout</div>
+                        <div className='linkDesign' onClick={() => logOff()}>Cerrar Sesión</div>
                     </>)
 
 
@@ -107,8 +107,8 @@ export const Header = () => {
                         //La primera vez que entramos en la aplicación, siempre entrará aquí por defecto
 
                         <>
-                            <div className='linkDesign' onClick={() => setTimeout(() => { navigate("/login") }, 200)}>Login</div>
-                            <div className='linkDesign' onClick={() => setTimeout(() => { navigate("/register") }, 200)}>Register</div>
+                            <div className='linkDesign' onClick={() => setTimeout(() => { navigate("/login") }, 200)}>Inicia Sesión</div>
+                            <div className='linkDesign' onClick={() => setTimeout(() => { navigate("/register") }, 200)}>Registrarse</div>
                         </>
                     )
                 }

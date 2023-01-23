@@ -5,9 +5,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 
     height: 85vh;
     width: 100vw;
 
+    color: orangered;
+
     background-color: #454545;
+}
+.dataDesign {
+
+    color: white;
 }

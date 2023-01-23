@@ -1,13 +1,11 @@
 
-
 import React, { useState, useEffect } from 'react';
 import { CardSerie } from '../../common/CardSerie/CardSerie';
 import { getSeries } from '../../services/apiCalls';
-import './Home.css';
-
 import Loading from './loading.gif';
-
 import { useNavigate } from 'react-router-dom';
+
+import './Home.css';
 
 //RDX imports......
 import { useSelector, useDispatch } from "react-redux";
@@ -46,7 +44,6 @@ export const Home = () => {
                             //Ahora que resultado ya ha venido con las series, 
                             //guardo en el hook tan sólo las series, sin la info 
                             //de la conexión etc.... sólo las series
-                            console.log(resultado);
                             setSeries(resultado.data);
                         }
                     )
@@ -57,6 +54,10 @@ export const Home = () => {
         };
 
     }, [series]);
+
+    useEffect(() => {
+        console.log(datosReduxSeries);
+    })
 
     const Choosen = (serie) => {
 

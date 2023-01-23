@@ -7,10 +7,6 @@ export const userSlice = createSlice({
       userPass: {
         token: '',
         user: {},
-        name: '',
-        surname: '',
-        email: '',
-        password: ''
       }
     },
     reducers: {
@@ -32,13 +28,25 @@ export const userSlice = createSlice({
           ...action.payload
         }
       },
+      find: (state, action) => {
+        return {
+          ...state,
+          ...action.payload
+        }
+      },
+      clear: (state, action) => {
+        return {
+          ...state,
+          ...action.payload
+        }
+      }
       
     }
     
 });
 
 //Acciones que modificarán RDX
-export const { login, logout, register } = userSlice.actions;
+export const { login, logout, register, find, clear } = userSlice.actions;
 
 //Estado del que leeremos RDX
 export const userData = (state) => state.user;

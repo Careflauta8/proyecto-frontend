@@ -20,16 +20,17 @@ export const postRegister = async (usuario) => {
     return await axios.post(`${root}users/register`, usuario)
 }
 
-export const getSeries = async () => {
+export const getSeries = async (serie) => {
 
-    return await axios.get(`${root}series`);
+    return await axios.get(`${root}series`, serie );
 
 }
 
+//Funcion buscar series
 export const getSearch = async (criterioBusqueda) => {
 
     // return await axios.get(`${root}series/title`, criterioBusqueda);
-    return await axios.get(`${root}series/title, ${criterioBusqueda}`);
+    return await axios.get(`${root}series/title/${criterioBusqueda}`);
 }
 
 //Funcion que alquila

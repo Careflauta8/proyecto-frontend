@@ -58,6 +58,7 @@ export const Register = () => {
     return (
         <div className='registerDesign'>
             {/*<pre>{JSON.stringify(usuario, null, 2)}</pre>*/}
+            <div></div>
             Nombre
             <InputText 
             type={'text'} 
@@ -65,6 +66,7 @@ export const Register = () => {
             placeholder={'Escribe tu nombre'} 
             functionHandler={registerInputHandler}
             />
+            <div></div>
             Apellidos
              <InputText 
             type={'text'} 
@@ -72,6 +74,7 @@ export const Register = () => {
             placeholder={'Escribe tu apellido'} 
             functionHandler={registerInputHandler}
             />
+            <div></div>
             Email
             <InputText 
             type={'email'} 
@@ -79,6 +82,7 @@ export const Register = () => {
             placeholder={'Escribe un correo electronico'} 
             functionHandler={registerInputHandler}
             />
+            <div></div>
             Password
             <InputText 
             type={'password'} 
@@ -86,13 +90,14 @@ export const Register = () => {
             placeholder={'Crea una contraseña'}  
             functionHandler={registerInputHandler}
             />
+            <div></div>
             Pais
              <InputText 
             type={'text'} 
             name={'country'} 
             placeholder={'Escribe tu pais de residencia'}  
             functionHandler={registerInputHandler}
-            />
+            /><div></div>
             Nº Tarjeta de Credito/Debito
              <InputText 
             type={'text'} 
