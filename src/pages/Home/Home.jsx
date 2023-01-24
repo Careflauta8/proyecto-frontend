@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { CardSerie } from '../../common/CardSerie/CardSerie';
 import { getSeries } from '../../services/apiCalls';
+
 import './Home.css';
 
 import Loading from './loading.gif';
@@ -57,9 +58,6 @@ export const Home = () => {
 
     }, [series]);
 
-    // useEffect(() => {
-    //     console.log("eeeeooooooooo", datosReduxSeries);
-    // })
 
     const Choosen = (serie) => {
 

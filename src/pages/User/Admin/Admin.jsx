@@ -20,11 +20,9 @@ export const Admin = () => {
     const [allUsers, setAllUsers] = useState([]);
 
     useEffect(()=>{
-        
         //Me conecto a redux para ver las credenciales de usuario y comprobar que su rol es admin...
         if(userRDX.userPass.user.rol !== 'admin'){
             navigate("/");
-
         }
 
     },[])
@@ -37,7 +35,7 @@ export const Admin = () => {
                 .then(resultado => {
 
                     //seteo el hook de los usuarios...
-                    setAllUsers(resultado.data);
+                    setAllUsers(resultado);
                 })
                 .catch(error => console.log(error));
         };

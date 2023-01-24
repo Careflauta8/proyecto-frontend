@@ -123,7 +123,7 @@ export const Header = () => {
 
                 {datosReduxUsuario.userPass.user.rol === "admin" &&
                 
-                    <div onClick={()=>navigate("/admin")} className='linkDesign'>admin</div>
+                    <div onClick={()=>navigate("/admin")} className='linkDesign'>Admin</div>
                 
                 }
 
@@ -136,10 +136,8 @@ export const Header = () => {
     a userPass del estado de Redux el contenido de initial, es decir...lo reiniciamos o vaciamos,
     al no tener token ni datos de usuario, dejaremos de estar logeados */}
                         <div className='linkDesign' onClick={() => logOff()}>Cerrar Sesión</div>
-                    </>)
-
-
-                    : (//Entraremos en el else si el token que hay en Redux está vacio (comillas vacias.)....
+                    </>
+                    ) : (//Entraremos en el else si el token que hay en Redux está vacio (comillas vacias.)....
                         //La primera vez que entramos en la aplicación, siempre entrará aquí por defecto
 
                         <>

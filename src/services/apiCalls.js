@@ -1,5 +1,4 @@
 
-
 import axios from 'axios';
 
 const root = 'http://localhost:5500/';
@@ -26,10 +25,10 @@ export const getSeries = async (serie) => {
 }
 
 //Funcion buscar series
-export const getSearch = async (criterioBusqueda) => {
+export const getSearch = async (title) => {
 
     // return await axios.get(`${root}series/title`, criterioBusqueda);
-    return await axios.get(`${root}series/title/${criterioBusqueda}`);
+    return await axios.get(`${root}series/title/${title}`);
 }
 
 //Funcion que alquila
@@ -55,15 +54,16 @@ export const getallUsers = async (token) => {
     //Esta sería la forma en la que conectaríamos con la API para traernos todos los users en modo admin
 
     let config = {
-        
+      
         method: 'get', //aqui especifico el protocolo http
         url : `${root}/admin`, //este sería mi endpoint del backend de admin que trae todos los users
-        body, //el body que contiene los datos
+        body,//el body que contiene los datos
         headers: { 
             'Authorization': 'Bearer ' + token
+           
           }
-         
+          
     }
 
-    return await axios.post(config);
+    return await axios.get(config);
 }
