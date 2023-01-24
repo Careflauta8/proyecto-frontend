@@ -2,10 +2,11 @@
 import React, { useState, useEffect } from 'react';
 import { CardSerie } from '../../common/CardSerie/CardSerie';
 import { getSeries } from '../../services/apiCalls';
-import Loading from './loading.gif';
-import { useNavigate } from 'react-router-dom';
-
 import './Home.css';
+
+import Loading from './loading.gif';
+
+import { useNavigate } from 'react-router-dom';
 
 //RDX imports......
 import { useSelector, useDispatch } from "react-redux";
@@ -44,6 +45,7 @@ export const Home = () => {
                             //Ahora que resultado ya ha venido con las series, 
                             //guardo en el hook tan sólo las series, sin la info 
                             //de la conexión etc.... sólo las series
+
                             setSeries(resultado.data);
                         }
                     )
@@ -55,9 +57,9 @@ export const Home = () => {
 
     }, [series]);
 
-    useEffect(() => {
-        console.log(datosReduxSeries);
-    })
+    // useEffect(() => {
+    //     console.log("eeeeooooooooo", datosReduxSeries);
+    // })
 
     const Choosen = (serie) => {
 
@@ -75,12 +77,12 @@ export const Home = () => {
     return (
         <div className='homeDesign'>
 
-            {series.length > 0 ? (
+            {datosReduxSeries.series.length > 0 ? (
 
                 //Si entramos aqui es porque tenemos series de Redux....
 
                 <div className='rosterDesign'>
-                    {series.map(
+                    {datosReduxSeries.series.map(
                         serie => {
                             return (
                                 <div onClick={() => Choosen(serie)} key={serie.id}>
@@ -92,11 +94,35 @@ export const Home = () => {
                 </div>
 
 
-            ) : (
+            ) :
 
-                <div><img className="loadingGif" src={Loading} alt="Cargando" /></div>
+                (
 
-            )
+
+                    series.length > 0 ? (
+
+                        // Ya que el hook si contiene las series, es momento de mapearlas
+                        // y poder mostrarlas en pantalla
+
+                        <div className='rosterDesign'>
+                            {series.map(
+                                serie => {
+                                    return (
+                                        <div onClick={() => Choosen(serie)} key={serie.id}>
+                                            <CardSerie serie={serie} />
+                                        </div>
+                                    )
+                                }
+                            )}
+                        </div>
+
+                    ) : (
+
+                        <div><img className="loadingGif" src={Loading} alt="Cargando" /></div>
+
+                    )
+
+                )
 
             }
 

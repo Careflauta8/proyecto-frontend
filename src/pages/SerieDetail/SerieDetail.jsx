@@ -11,20 +11,20 @@ import { poster_default } from '../../services/utiles';
 
 export const SerieDetail = () => {
 
-    //Instanciar los datos de Redux...
+//     //Instanciar los datos de Redux...
 
-    const detailRdx = useSelector(serieData);
-    const detailUsr = useSelector(userData);
+     const detailRdx = useSelector(serieData);
+     const detailUsr = useSelector(userData);
 
-    //Funciones....
+     //Funciones....
 
     const Rentme = () => {
 
-        //aquí llamaremos a la función que se comunica con la API
-        //que podemos encontrarla en services
-        //encargada de realizar el pedido....... le pasaremos detailRdx y detailUsr
-        //porque ahi tendremos la id de user y la id de la peli
-    }
+         //aquí llamaremos a la función que se comunica con la API
+         //que podemos encontrarla en services
+         //encargada de realizar el pedido....... le pasaremos detailRdx y detailUsr
+         //porque ahi tendremos la id de user y la id de la peli
+     }
 
     return(
         <div className='serieDesign'>
@@ -54,4 +54,6 @@ export const SerieDetail = () => {
         </div>
     )
 
-}
+};
+
+

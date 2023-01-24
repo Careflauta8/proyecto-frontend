@@ -20,7 +20,7 @@
     align-items: center;
 
     background-color: #000000;
-    border: 0.1em solid orangered;
+
 }
 
 .searchDesign {
@@ -36,7 +36,7 @@
     align-items: center;
 
     background-color: #000000;
-    border: 0.1em solid orangered;
+
 }
 
 .homeAvatar {
@@ -46,7 +46,7 @@
 .headerLinksDesign {
 
     height: 15vh;
-    width: 20vw;
+    width: 30vw;
 
     display: flex;
     flex-direction: row;
@@ -54,7 +54,7 @@
     align-items: flex-end;
 
     background-color: #000000;
-    border: 0.1em solid orangered;
+
 }
 
 .linkDesign {

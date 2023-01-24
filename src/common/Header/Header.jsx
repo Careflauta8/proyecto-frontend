@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Header.css';
@@ -12,7 +11,7 @@ import Logo from './home.png';
 import { useSelector, useDispatch } from "react-redux";
 //a continuación, importo los datos del estado de la slice de user (userData) y la ACCION logout
 import { userData, logout } from "../../pages/User/userSlice";
-import { serieData, find } from '../../pages/serieSlice';
+import { serieData, find, clear } from '../../pages/serieSlice';
 import { InputText } from '../InputText/InputText';
 import { getSearch } from '../../services/apiCalls';
 
@@ -32,7 +31,7 @@ export const Header = () => {
 
     //Guardo en la constante datosReduxUsuario, los datos que me traigo del state de redux (userData)
     const datosReduxUsuario = useSelector(userData);
-
+    const datosReduxSeries = useSelector(serieData)
     // useEffect(() => {
     //     //Este useEffect lo hago para saber que contiene Redux la slice de user realmente....
     //     console.log(datosReduxUsuario);
@@ -40,7 +39,7 @@ export const Header = () => {
 
     useEffect(()=>{
 
-        if(search !== ''){
+        if(search !== ""){
 
             //Procedemos a buscar...
 
@@ -50,13 +49,19 @@ export const Header = () => {
                     resultado => {
                     
                         //Guardo en REDUX..........
-                        dispatch(find({series : resultado.data.results}))
+                        dispatch(find({series : resultado.data}))
                     }
                 )
                 .catch(error=> console.log(error));
 
-        }
+        //La condición de este else if nos indica que sólo entrará si la búsqueda está vacia y en redux no hay resultados
+        //de búsquedas anteriores, eso nos OBLIGA a interpretar que antes se escribió algo para volver a dejarlo en las
+        //comillas vacias.
+        } else if(search === "" && datosReduxSeries.series.length > 0) {
 
+            //Si borramos lo que había escrito o no nay nada, limpiamos las series de REDUX
+            dispatch(clear({choosen : {}, series: []}));
+        } 
 
     },[search])
 
@@ -77,21 +82,52 @@ export const Header = () => {
         
     }
 
+    const ResetHome = () => {
+
+        //primero limpiamos búsquedas posibles de Redux
+        dispatch(clear({choosen : {}, series: []}));
+
+        //redirigimos a Home
+        navigate("/")
+
+    }
+
+    const searchErrorHandler = (e) => {
+
+        console.log("comprobamos mañana la búsqueda");
+    }
+
 
     //Ejecuto el condicional if, para.....
     //Primero, en caso de que el token contenga algo que no sean comillas vacias, mostrar la opcion de logout y el nombre de usuario
 
     return (
         <div className='headerDesign'>
-            <div onClick={()=>navigate("/")} className='homeDesignHeader'><img className='homeAvatar' src={Logo} alt="Home"/></div>
+            <div onClick={()=>ResetHome()} className='homeDesignHeader'><img className='homeAvatar' src={Logo} alt="home"/></div>
             <div className='searchDesign'>
-                    Search <br/>
-                <InputText type={"text"} name={"search"} placeholder={"Busca aquí tu serie favorita"} functionHandler={handleSearch} />
+
+                <InputText 
+                    type={"text"} 
+                    name={"search"} 
+                    className={'inputDesign'} 
+                    placeholder={"Busca aquí tu serie favorita"} 
+                    functionHandler={handleSearch} 
+                    errorHandler={searchErrorHandler}
+                />
             </div>
 
             <div className='headerLinksDesign'>
                 {/* Introducimos el logo, independientemente de lo que nos vaya a sacar después */}
 
+                {/* Renderizado condicional por si el usuario es admin y hay que mostrar la sección de Admin */}
+
+                {datosReduxUsuario.userPass.user.rol === "admin" &&
+                
+                    <div onClick={()=>navigate("/admin")} className='linkDesign'>admin</div>
+                
+                }
+
+                {/* Renderizado condicional por si el usuario sí está logeado... */}
                 {datosReduxUsuario.userPass.token !== "" ?
 
                     (<>
@@ -107,7 +143,7 @@ export const Header = () => {
                         //La primera vez que entramos en la aplicación, siempre entrará aquí por defecto
 
                         <>
-                            <div className='linkDesign' onClick={() => setTimeout(() => { navigate("/login") }, 200)}>Inicia Sesión</div>
+                            <div className='linkDesign' onClick={() => setTimeout(() => { navigate("/login") }, 200)}>Iniciar Sesión</div>
                             <div className='linkDesign' onClick={() => setTimeout(() => { navigate("/register") }, 200)}>Registrarse</div>
                         </>
                     )
@@ -115,5 +151,9 @@ export const Header = () => {
 
             </div>
         </div>
+
+
     );
+
+
 };

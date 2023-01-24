@@ -1,4 +1,5 @@
 
+
 import { createSlice } from '@reduxjs/toolkit';
 
 export const serieSlice = createSlice({
@@ -19,13 +20,19 @@ export const serieSlice = createSlice({
           ...state,
           ...action.payload
         }
+      },
+      clear: (state, action) => {
+        return {
+          ...state,
+          ...action.payload
+        }
       }
     }
     
 });
 
 //Acciones que modificarán RDX
-export const { select, find } = serieSlice.actions;
+export const { select, find, clear } = serieSlice.actions;
 
 //Estado del que leeremos RDX
 export const serieData = (state) => state.serie;

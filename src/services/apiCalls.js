@@ -3,8 +3,7 @@
 import axios from 'axios';
 
 const root = 'http://localhost:5500/';
-// const root2 = 'https://api.themoviedb.org/3';
-// const api_key = '210d6a5dd3f16419ce349c9f1b200d6d';
+
 
 export const postLogin = async (credenciales) => {
     console.log(credenciales);
@@ -45,6 +44,25 @@ export const postRent = async (body, token) => {
         headers: { 
             'Authorization': 'Bearer ' + token
           }
+    }
+     return await axios.post(config);
+}
+
+//Endpoints para Admin
+
+export const getallUsers = async (token) => {
+
+    //Esta sería la forma en la que conectaríamos con la API para traernos todos los users en modo admin
+
+    let config = {
+        
+        method: 'get', //aqui especifico el protocolo http
+        url : `${root}/admin`, //este sería mi endpoint del backend de admin que trae todos los users
+        body, //el body que contiene los datos
+        headers: { 
+            'Authorization': 'Bearer ' + token
+          }
+         
     }
 
     return await axios.post(config);

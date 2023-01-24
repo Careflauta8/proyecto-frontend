@@ -1,0 +1,15 @@
+
+.adminDesign {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: bold;
+    color: white;
+
+    height: 85vh;
+    width: 100vw;
+
+    background-color: #454545;
+}

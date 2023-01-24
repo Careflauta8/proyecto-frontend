@@ -47,7 +47,7 @@ export const Login = () => {
         postLogin(credenciales) //se trae el token del back 
             .then(
                 resultado => {
-                    console.log(resultado, 'aaaaa');
+                    console.log(resultado);
 
                     //Ahora yo decodificaría el token... 
 
