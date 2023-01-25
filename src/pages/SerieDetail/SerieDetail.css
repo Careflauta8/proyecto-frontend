@@ -37,7 +37,7 @@
     border-radius: 0.8em;
 }
 
-.rentDesign {
+.alquilerDesign {
 
     display: flex;
     justify-content: center;
@@ -48,7 +48,9 @@
 
     border-radius: 1em;
 
-    background-color: darkcyan;
+    padding: 0.7em;
+    margin: 1em;
+    background-color: orangered;
 
     cursor: pointer;
 
@@ -57,7 +59,7 @@
     color: white;
 }
 
-.rentDesign:hover {
+.alquilerDesign:hover {
     transition: 0.2s;
-    background-color: cyan;
+    background-color: orange;
 }

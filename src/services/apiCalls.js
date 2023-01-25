@@ -33,13 +33,13 @@ export const getSearch = async (title) => {
 
 //Funcion que alquila
 
-export const postRent = async (body, token) => {
+export const postnewAlquiler = async (body,token) => {
 
 
     let config = {
         method: 'post', //aqui especifico el protocolo http
-        url : `${root}/oders/neworder`, //este sería mi endpoint del backend
-        body, //el body que contiene los datos
+        url : `${root}/newAlquiler`, //este sería mi endpoint del backend
+        body,
         headers: { 
             'Authorization': 'Bearer ' + token
           }
@@ -47,17 +47,32 @@ export const postRent = async (body, token) => {
      return await axios.post(config);
 }
 
+export const getAllAlquileres = async (body,token) => {
+
+
+    let config = {
+        method: 'get', //aqui especifico el protocolo http
+        url : `${root}/Alquileres`, //este sería mi endpoint del backend
+        body,
+        headers: { 
+            'Authorization': 'Bearer ' + token
+          }
+    }
+     return await axios.post(config);
+}
+
+
 //Endpoints para Admin
 
 export const getallUsers = async (token) => {
 
     //Esta sería la forma en la que conectaríamos con la API para traernos todos los users en modo admin
-
+    
     let config = {
-      
+
         method: 'get', //aqui especifico el protocolo http
-        url : `${root}/admin`, //este sería mi endpoint del backend de admin que trae todos los users
-        body,//el body que contiene los datos
+        url : `${root}/users`, //este sería mi endpoint del backend de admin que trae todos los users
+      
         headers: { 
             'Authorization': 'Bearer ' + token
            

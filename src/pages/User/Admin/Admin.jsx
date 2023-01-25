@@ -45,7 +45,6 @@ export const Admin = () => {
     return (
         <div className='adminDesign'>
             {allUsers.length > 0 &&
-            
                 allUsers.map(
                     user => {
                         return (
