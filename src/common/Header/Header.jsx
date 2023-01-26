@@ -52,7 +52,7 @@ export const Header = () => {
                         dispatch(find({series : resultado.data}))
                     }
                 )
-                .catch(error=> console.log(error));
+                .catch(error => console.log(error));
 
         //La condición de este else if nos indica que sólo entrará si la búsqueda está vacia y en redux no hay resultados
         //de búsquedas anteriores, eso nos OBLIGA a interpretar que antes se escribió algo para volver a dejarlo en las
@@ -93,6 +93,9 @@ export const Header = () => {
     }
 
     const searchErrorHandler = (e) => {
+        // if(e == undefined){
+        //     alert("Error")
+        // }
 
         console.log("comprobamos mañana la búsqueda");
     }

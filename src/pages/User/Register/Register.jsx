@@ -79,7 +79,6 @@ export const Register = () => {
     return (
         <div className='registerDesign'>
             {/*<pre>{JSON.stringify(usuario, null, 2)}</pre>*/}
-            <div className='errorText'>{usuarioError.nameError}
             Nombre
             <InputText 
             type={'text'} 
@@ -89,8 +88,7 @@ export const Register = () => {
             functionHandler={registerInputHandler}
             errorHandler={registerErrorHandler}
             />
-            </div>
-            <div className='errorText'>{usuarioError.surnameError}
+            <div className='errorText'>{usuarioError.nameError}</div>
             Apellidos
              <InputText 
             type={'text'} 
@@ -100,8 +98,7 @@ export const Register = () => {
             functionHandler={registerInputHandler}
             errorHandler={registerErrorHandler}
             />
-            </div>
-            <div className='errorText'>{usuarioError.emailError}
+            <div className='errorText'>{usuarioError.surnameError}</div>
             Email
             <InputText 
             type={'email'} 
@@ -111,8 +108,7 @@ export const Register = () => {
             functionHandler={registerInputHandler}
             errorHandler={registerErrorHandler}
             />
-            </div>
-            <div className='errorText'>{usuarioError.passwordError}
+            <div className='errorText'>{usuarioError.emailError}</div>
             Password
             <InputText 
             type={'password'} 
@@ -122,8 +118,7 @@ export const Register = () => {
             functionHandler={registerInputHandler}
             errorHandler={registerErrorHandler}
             />
-            </div>
-            <div className='errorText'>{usuarioError.countryError}
+            <div className='errorText'>{usuarioError.passwordError}</div>
             Pais
              <InputText 
             type={'text'} 
@@ -133,8 +128,7 @@ export const Register = () => {
             functionHandler={registerInputHandler}
             errorHandler={registerErrorHandler}
             />
-            </div>
-            <div className='errorText'>{usuarioError.creditCardError}
+            <div className='errorText'>{usuarioError.countryError}</div>
             Nº Tarjeta de Credito/Debito
              <InputText 
             type={'text'} 
@@ -144,7 +138,8 @@ export const Register = () => {
             functionHandler={registerInputHandler}
             errorHandler={registerErrorHandler}
             />
-            </div>
+            <div className='errorText'>{usuarioError.creditCardError}</div>
+            
             <div className ='registerButtonDesign' onClick = {()=>Registrarme()}>REGISTER</div>
         </div>
     );

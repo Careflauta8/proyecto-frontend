@@ -24,7 +24,7 @@ export const Profile = () => {
             navigate("/");
         } else {
             //A este else entraremos si SI que tenemos el token....
-            console.log(userRDX.userPass);
+            userRDX.userPass
         }
     },[]);
 

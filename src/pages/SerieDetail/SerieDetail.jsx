@@ -46,7 +46,7 @@ export const SerieDetail = () => {
             fechaFin : dayjs().add(7, 'days').format('DD/MM/YYYY'),
             importe : 3.99
         }
-        console.log(detailUsr);
+        console.log(detailUsr.userPass.token);
         console.log(detailRdx);
 
         postnewAlquiler(body, detailUsr.userPass.token)

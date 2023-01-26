@@ -34,12 +34,17 @@ export const errorCheck = (name, value) => {
                 return '';
             }
 
-        case 'creditcard':
+            case 'creditCard':
 
-            if (! /(?=.*?[0-8])/.test(value) ) {
-                return "Tarjeta de Credito/Debito incorrecta";
+            if (value.length < 8) {
+                return "Escribe un max/min de 15 números"
             } else {
-                return "";
+
+                if (! /[\d()+-]/g.test(value)) {
+                    return "Tarjeta de Credito/Debito incompleta o mal escrita";
+                } else {
+                    return "";
+                }
             }
 
         case 'password':

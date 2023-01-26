@@ -121,6 +121,7 @@ export const Login = () => {
                 functionHandler={InputHandler}
                 errorHandler={loginErrorHandler}
             />
+            <div className='errorText'>{credencialesError.emailError}</div>
             Password
             <InputText 
                 type={"password"}  
@@ -131,6 +132,7 @@ export const Login = () => {
                 errorHandler={loginErrorHandler}
             />
             <div className='errorText'>{credencialesError.passwordError}</div>
+            
             <div className='loginButtonDesign' onClick={()=>Logeame()}>LOGIN</div>
         </div>
     );

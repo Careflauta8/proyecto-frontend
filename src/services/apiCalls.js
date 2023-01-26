@@ -31,20 +31,26 @@ export const getSearch = async (title) => {
     return await axios.get(`${root}series/title/${title}`);
 }
 
-//Funcion que alquila
+//Funcion de alquilar
 
 export const postnewAlquiler = async (body,token) => {
 
 
+    // let config = {
+    //     // method: 'post', //aqui especifico el protocolo http
+    //     // url : `${root}/newAlquiler`, //este sería mi endpoint del backend
+    //     // body,
+    //     headers: { 
+    //         'Authorization': 'Bearer ' + token
+    //       }
+    // }
+    console.log(token);
     let config = {
-        method: 'post', //aqui especifico el protocolo http
-        url : `${root}/newAlquiler`, //este sería mi endpoint del backend
-        body,
-        headers: { 
-            'Authorization': 'Bearer ' + token
-          }
-    }
-     return await axios.post(config);
+    
+        headers: { Authorization: `Bearer ${token}` }
+    };
+     console.log(config, body);
+    return await axios.post(`${root}alquileres/newAlquiler`, body, config);
 }
 
 export const getAllAlquileres = async (body,token) => {
