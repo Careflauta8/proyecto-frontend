@@ -35,36 +35,25 @@ export const getSearch = async (title) => {
 
 export const postnewAlquiler = async (body,token) => {
 
-
-    // let config = {
-    //     // method: 'post', //aqui especifico el protocolo http
-    //     // url : `${root}/newAlquiler`, //este sería mi endpoint del backend
-    //     // body,
-    //     headers: { 
-    //         'Authorization': 'Bearer ' + token
-    //       }
-    // }
-    console.log(token);
     let config = {
-    
+      
         headers: { Authorization: `Bearer ${token}` }
+        
     };
      console.log(config, body);
     return await axios.post(`${root}alquileres/newAlquiler`, body, config);
 }
 
-export const getAllAlquileres = async (body,token) => {
+export const getAllAlquileres = async (token) => {
 
 
     let config = {
-        method: 'get', //aqui especifico el protocolo http
-        url : `${root}/Alquileres`, //este sería mi endpoint del backend
-        body,
+         //este sería mi endpoint del backend
         headers: { 
             'Authorization': 'Bearer ' + token
           }
     }
-     return await axios.post(config);
+     return await axios.get(`${root}alquileres/Alquileres`,config);
 }
 
 

@@ -16,12 +16,9 @@ import { postnewAlquiler } from '../../services/apiCalls';
 
 export const SerieDetail = () => {
 
-     //Instanciar los datos de Redux...
 
-     const detailRdx = useSelector(serieData);
-     const detailUsr = useSelector(userData);
-
-    //Instancia navigate....
+    const detailRdx = useSelector(serieData);
+    const detailUsr = useSelector(userData);
     const navigate = useNavigate();
 
     //Hooks
@@ -42,9 +39,11 @@ export const SerieDetail = () => {
             //id de la serie...
             idSerie : detailRdx.choosen._id,
             idUser : detailUsr.userPass.user._id,
-            fechaInicio : dayjs().format('DD/MM/YYYY'),
-            fechaFin : dayjs().add(7, 'days').format('DD/MM/YYYY'),
-            importe : 3.99
+            fechaInicio : dayjs().format('MM/DD/YYYY'),
+            fechaFin : dayjs().add(7, 'days').format('MM/DD/YYYY'),
+            importe : 10,
+            customer : detailUsr.userPass.user.name,
+            nameSerie : detailRdx.choosen.title
         }
         console.log(detailUsr.userPass.token);
         console.log(detailRdx);
@@ -54,7 +53,7 @@ export const SerieDetail = () => {
                 //Esto se ejecutará si el pedido se ha realizado correctamente
                 //mostrando el mensaje
 
-                setMsg(resultado.data)
+                setMsg(resultado.Message)
 
 
                 //Después de haber realizado el pedido, llevamos al user a su perfil
@@ -92,7 +91,7 @@ export const SerieDetail = () => {
                     
                         <div onClick={()=>Alquilame()} className='alquilerDesign'>ALQUILAR</div>
                     }
-                    <div>{msg}</div>
+                     <div>{msg}</div> 
                 </div>
             
             }

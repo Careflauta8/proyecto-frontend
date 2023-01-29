@@ -5,11 +5,25 @@
     justify-content: center;
     align-items: center;
 
+    padding-top: 5px;
+
     font-weight: bold;
     color: white;
 
-    height: 85vh;
-    width: 100vw;
-
     background-color: #454545;
+}
+.alquiler {
+
+    border: 0.1em solid orangered;
+    background-color: black;
+
+    margin-bottom: 1em;
+    padding: 1em;
+    
+    width: 300px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }

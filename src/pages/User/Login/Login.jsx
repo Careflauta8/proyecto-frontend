@@ -68,10 +68,10 @@ export const Login = () => {
                     //ambas cosas en REDUX, para usarlas cuando yo quiera
 
                     let decodificado = Decoder(resultado.data.token);
-                    console.log(resultado);
+                    console.log(decodificado, 'resultadoooo');
 
                     let userPass = {
-                        token : resultado, // estos datos serian el payload //
+                        token : resultado.data.token, // estos datos serian el payload //
                         user: decodificado.usuario[0]
 
                     }

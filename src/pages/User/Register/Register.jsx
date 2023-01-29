@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 import { InputText } from '../../../common/InputText/InputText';
@@ -30,6 +30,8 @@ export const Register = () => {
         countryError: '',
         creditCardError: ''
     })
+
+    const navigate = useNavigate();
 
     // //Variables y constantes a utilizar
     // const navigate = useNavigate();
