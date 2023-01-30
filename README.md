@@ -16,6 +16,18 @@
 - se lleva a cabo la opcion de alquiler de series.
 - últimas pinceladas para dejar finiquitado el trabajo, aun queda mucho por mejorar.
 
+## VISTA HOME ##
+- En esta vista tenemos las series, tambien contamos con la opcion de iniciar sesión y de registro de nuevos usuarios.![image](https://user-images.githubusercontent.com/116036050/215581337-9e392063-428a-4def-b785-149b541d4aff.png)
+## VISTA DE REGISTRO ##
+- En esta vista tenemos la opcion de registrarnos introduciendo unos datos claves para identificar al usuario, tambien tenemos la opcion de volver a home. ![image](https://user-images.githubusercontent.com/116036050/215582241-1301f15f-be43-4063-baee-ef3932b89e34.png)
+## VISTA DE LOGIN ##
+- En esta vista accedemos a todas las series asi teniendo la posibilidad de alquilarlas. ![image](https://user-images.githubusercontent.com/116036050/215582620-31452ccf-ad9f-40e0-8ea4-035dc2545989.png)
+## VISTA DE PERFIL DE USUARIO ##
+- En esta vista el usuario puede ver sus datos y las series alquiladas, así sabrá cuando acabaran los plazos de visibilidad de las mismas. ![image](https://user-images.githubusercontent.com/116036050/215585549-2bc0b936-d8c5-4a89-acd1-e49afa5151f6.png)
+## VISTA DEL ADMINISTRADOR ##
+- Esta vista la podra ver UNICAMENTE el administrador, aqui apareceran todas las series alquiladas con sus respectivos datos de alquiler: Cliente, Fecha Inicio de alquiler, Fecha final de alquiler y precio de la serie. ![image](https://user-images.githubusercontent.com/116036050/215586049-95caf86d-2c25-46db-a752-3592ce6ec809.png)
+
+
 #### Endpoints de llamadas a la API ####
 
 ###### Con este Endpoint el usuario puede iniciar sesión ######
