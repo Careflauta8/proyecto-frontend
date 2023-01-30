@@ -88,7 +88,7 @@ useEffect(() => {
                 <h2>MIS ALQUILERES</h2>
               
             </div>
-            <div>
+            <div className='dataDesign'>
            
             {alquileres.length > 0 &&
                alquileres.map(
@@ -101,9 +101,15 @@ useEffect(() => {
                                 <table>     
                                     <tbody>
                                         <tr>
-                                            <td>{serie.nameSerie}</td>
-                                            <td>{serie.fechaInicio}</td>
-                                            <td>{serie.fechaFin}</td>
+                                            <td> Titulo:
+                                                {serie.nameSerie}
+                                            </td>
+                                            <td> Fecha Inicio de Alquiler:
+                                                {serie.fechaInicio}
+                                            </td>
+                                            <td> Fecha Fin de Alquiler:
+                                                {serie.fechaFin}
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table> 
