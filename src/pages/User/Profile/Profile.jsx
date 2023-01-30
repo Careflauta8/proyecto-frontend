@@ -18,7 +18,7 @@ export const Profile = () => {
     const [alquileres, setAlquileres] = useState([]);
     //Instancio RDX
     const userRDX = useSelector(userData);
-    console.log(userRDX);
+
     useEffect(()=>{
 
         if(userRDX.userPass.token === ''){
@@ -33,7 +33,7 @@ export const Profile = () => {
 
 useEffect(() => {
     if (alquileres.length === 0){
-        console.log(userRDX.userPass.user._id);
+        
         setTimeout(()=>{
             
             userAlquileres(userRDX.userPass.token, userRDX.userPass.user._id)
@@ -41,7 +41,7 @@ useEffect(() => {
            
             .then(
                 resultado => {
-                console.log(resultado, 'sa,jkasjkass');
+              
                     setAlquileres(resultado.data)
                   
                 }
