@@ -38,16 +38,15 @@ export const SerieDetail = () => {
             customer : detailUsr.userPass.user.name,
             nameSerie : detailRdx.choosen.title
         }
-        console.log(detailUsr.userPass.token);
-        console.log(detailRdx);
+        // console.log(detailUsr.userPass.token);
+        // console.log(detailRdx);
 
         postnewAlquiler(body, detailUsr.userPass.token)
             .then(resultado => {
                 //Esto se ejecutará si el pedido se ha realizado correctamente
                 //mostrando el mensaje
 
-                setMsg(resultado.Message)
-
+                setMsg(resultado.data.Message);
 
                 //Después de haber realizado el pedido, llevamos al user a su perfil
                 setTimeout(()=>{

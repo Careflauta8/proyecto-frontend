@@ -49,13 +49,13 @@ export const Admin = () => {
                         return (
                             <div className='alquiler'>
                                 <div><strong>Titulo:</strong>{serie.serieId.title}</div> 
-                                <br/>
+                               
                                 <div><strong>Cliente:</strong>{serie.userId.name} {serie.userId.surname}</div>
-                                <br />
+                               
                                 <div><strong>Fecha Inicio:</strong>{serie.fechaInicio}</div>
-                                <br/>
+                               
                                 <div><strong>Fecha Fin:</strong>{serie.fechaFin}</div>
-                                <br/> 
+                                
                                 <div><strong>Importe:</strong>{serie.importe}</div>
                             </div>
                         )

@@ -40,7 +40,6 @@ export const postnewAlquiler = async (body,token) => {
         headers: { Authorization: `Bearer ${token}` }
         
     };
-     console.log(config, body);
     return await axios.post(`${root}alquileres/newAlquiler`, body, config);
 }
 
@@ -56,7 +55,12 @@ export const getAllAlquileres = async (token) => {
      return await axios.get(`${root}alquileres/Alquileres`,config);
 }
 
-
+export const userAlquileres = async (token, id) => {
+    let config = {
+        headers: { Authorization: `Bearer ${token}`}
+    }
+    return await axios.get(`${root}alquileres/userAlquileres/${id}`, config)
+}
 //Endpoints para Admin
 
 export const getallUsers = async (token) => {
