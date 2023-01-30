@@ -30,23 +30,13 @@ export const Home = () => {
 
     useEffect(() => {
 
-        //Implementamos una condición para no modificar SIEMPRE el hook y asi evitamos
-        //caer en un bucle infinito.
-
         if (series.length === 0) {
 
             setTimeout(() => {
-                //Hago la llamada para traerme las series dentro de un settimeout para
-                //emular una posible tardanza de estas al llegar y que de tiempo a ver
-                //el gif de carga de tipo spinner
 
                 getSeries()
                     .then(
                         resultado => {
-                            //Ahora que resultado ya ha venido con las series, 
-                            //guardo en el hook tan sólo las series, sin la info 
-                            //de la conexión etc.... sólo las series
-
                             setSeries(resultado.data);
                         }
                     )

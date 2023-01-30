@@ -27,13 +27,6 @@ export const SerieDetail = () => {
     //Funciones....
     const Alquilame = () => {
 
-         //aquí llamaremos a la función que se comunica con la API
-         //que podemos encontrarla en services
-         //encargada de realizar el pedido....... le pasaremos detailRdx y detailUsr
-         //porque ahi tendremos la id de user y la id de la serie
-
-        //Vamos a recolectar los datos necesarios para hacer el alquiler y enviarlos al servicio
-
         let body = {
 
             //id de la serie...

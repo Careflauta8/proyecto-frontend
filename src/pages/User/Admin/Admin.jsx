@@ -6,9 +6,8 @@ import {useNavigate} from 'react-router-dom';
 //Imports RDX
 import { useSelector } from "react-redux";
 import { userData } from '../userSlice';
-import { getallUsers } from '../../../services/apiCalls';
 import { getAllAlquileres } from '../../../services/apiCalls';
-import { serieData } from '../../serieSlice';
+
 
 
 export const Admin = () => {
@@ -21,7 +20,7 @@ export const Admin = () => {
     //Instancio RDX
     const userRDX = useSelector(userData);
 
-    const [allUsers, setAllUsers] = useState([]);
+    
     const [allAlquileres, setAllAlquileres] = useState([]);
 
     useEffect(()=>{
@@ -33,19 +32,9 @@ export const Admin = () => {
     },[])
 
     useEffect(()=>{
-
-            // getallUsers()
-            //     .then(resultado => {
-            //         console.log(resultado, 'aquiiiiii');
-
-            //         //seteo el hook de los usuarios...
-            //         setAllUsers(resultado);
-            //     })
-            console.log(allAlquileres, 'que coño es esto');
    if(allAlquileres.length === 0){
     getAllAlquileres(detailUsr.userPass.token)
     .then(resultado => {
-console.log(resultado, 'kjdhjkasdhkdshk');
         //seteo el hook de los usuarios...
         setAllAlquileres(resultado.data);
     })
@@ -60,7 +49,13 @@ console.log(resultado, 'kjdhjkasdhkdshk');
                         return (
                             <div className='alquiler'>
                                 <div><strong>Titulo:</strong>{serie.serieId.title}</div> 
+                                <br/>
                                 <div><strong>Cliente:</strong>{serie.userId.name} {serie.userId.surname}</div>
+                                <br />
+                                <div><strong>Fecha Inicio:</strong>{serie.fechaInicio}</div>
+                                <br/>
+                                <div><strong>Fecha Fin:</strong>{serie.fechaFin}</div>
+                                <br/> 
                                 <div><strong>Importe:</strong>{serie.importe}</div>
                             </div>
                         )
