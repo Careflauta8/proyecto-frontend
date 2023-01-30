@@ -2,8 +2,11 @@
 # PROYECTO FRONT #
 
 ## PROYECTO ##
-- Este proyecto se basa en realizar un Front que hace llamdas a una base de datos que contenga usuarios y series hecha previamente para otro proyecto.Se ha utilizado REACT-REDUX. Me he decantado por desarrollar un front limpio,sencillo e intuitivo.
+- Este proyecto se basa en realizar un Front que hace llamdas a una base de datos que contenga usuarios y series hecha previamente para otro proyecto.Se ha utilizado REACT-REDUX-JAVASCRIPT-CSS3. Me he decantado por desarrollar un front limpio,sencillo e intuitivo.
 - En este Front tanto los usuarios No registrados como los que ya tienen una cuenta en la app pueden buscar las series por Titulo, tambien una vez registrados pueden alquilar cualquier serie. Las series las pueden encontrar por titulo.
+
+## TECNOLOGIAS ##
+- ![image](https://user-images.githubusercontent.com/116036050/215578829-df32cd0c-fe39-4a66-bfa2-edd84943c4a2.png) REACT. ![image](https://user-images.githubusercontent.com/116036050/215579153-0d7e1129-8f79-4178-8e14-f29dbd3f7042.png) REDUX. ![image](https://user-images.githubusercontent.com/116036050/215579444-bde4c2cc-9483-4bec-87f8-e78133c946ae.png) JAVASCRIPT. ![image](https://user-images.githubusercontent.com/116036050/215579630-269be669-57c1-4a37-8ddf-5679d4f1990b.png) CSS3.
 
 ## PROCESO ##
 - Desarrollo principal de la idea.
